@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>كل عام وأنت بخير يا بابا ❤️</title>
+    <!-- استدعاء خطوط عربية فاخرة ومميزة (Aref Ruqaa و Amiri) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Amiri:ital,wght@0,400;0,700;1,400&family=Aref+Ruqaa:wght@400;700&family=Cairo:wght@400;700;900&display=swap" rel="stylesheet">
+    <!-- مكتبة الألعاب النارية -->
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.5.1/dist/confetti.browser.min.js"></script>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            /* خلفية فاخرة ومهيبة بلمسات كحلي ملكي وذهبي دافئ */
+            background: radial-gradient(circle at center, #1b2a4a 0%, #0d1527 60%, #050a14 100%);
+            color: #ffffff;
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+            text-align: center;
+            font-family: 'Amiri', serif;
+            overflow-x: hidden;
+            position: relative;
+        }
+
+        /* إضافة زخرفة خلفية هادئة تعكس الهيبة والوقار */
+        body::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; right: 0; bottom: 0;
+            background-image: radial-gradient(rgba(212, 175, 55, 0.08) 1px, transparent 0);
+            background-size: 32px 32px;
+            pointer-events: none;
+        }
+
+        .card {
+            background: rgba(15, 23, 42, 0.75);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border: 1px solid rgba(212, 175, 55, 0.3); /* إطار ذهبي راقي */
+            border-radius: 28px;
+            padding: 45px 30px;
+            max-width: 550px;
+            width: 100%;
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.7),
+                        0 0 30px rgba(212, 175, 55, 0.15); /* إضاءة ذهبية خفيفة */
+            position: relative;
+            z-index: 1;
+        }
+
+        /* تاج ملكي ذهبي لمكانة الأب */
+        .crown {
+            font-size: 55px;
+            margin-bottom: 15px;
+            display: inline-block;
+            filter: drop-shadow(0 4px 8px rgba(212, 175, 55, 0.4));
+            animation: float 3s ease-in-out infinite;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-8px); }
+        }
+
+        h1 {
+            font-family: 'Aref Ruqaa', serif; /* خط رقعة أصيل ومهيب */
+            font-size: 34px;
+            font-weight: 700;
+            background: linear-gradient(135deg, #fef08a 0%, #d4af37 50%, #b45309 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-bottom: 25px;
+            text-shadow: 0 2px 10px rgba(212, 175, 55, 0.2);
+            letter-spacing: 0.5px;
+        }
+
+        /* حاوية النص */
+        .typing-container {
+            min-height: 120px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 30px;
+            padding: 15px 20px;
+            background: rgba(255, 255, 255, 0.03);
+            border-radius: 16px;
+            border-right: 3px solid #d4af37; /* لمسة ذهبية جانبية */
+        }
+
+        .typing-text {
+            font-family: 'Amiri', serif;
+            font-size: 23px;
+            line-height: 1.8;
+            color: #f8fafc;
+            font-weight: 400;
+        }
+
+        /* مشغل الموسيقى والمزيد من الخيارات */
+        .audio-control {
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+        }
+
+        .audio-btn {
+            background: rgba(212, 175, 55, 0.15);
+            border: 1px solid rgba(212, 175, 55, 0.4);
+            color: #fef08a;
+            padding: 8px 18px;
+            font-size: 15px;
+            border-radius: 20px;
+            cursor: pointer;
+            font-family: 'Cairo', sans-serif;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .audio-btn:hover {
+            background: rgba(212, 175, 55, 0.3);
+        }
+
+        /* زر التفاعل الرئيسي */
+        .btn {
+            background: linear-gradient(135deg, #d4af37 0%, #b45309 100%);
+            color: #0f172a;
+            border: none;
+            padding: 16px 32px;
+            font-size: 20px;
+            font-weight: 700;
+            font-family: 'Cairo', sans-serif;
+            border-radius: 50px;
+            cursor: pointer;
+            box-shadow: 0 10px 25px rgba(212, 175, 55, 0.3);
+            transition: all 0.3s ease;
+            width: 100%;
+        }
+
+        .btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 15px 30px rgba(212, 175, 55, 0.45);
+            background: linear-gradient(135deg, #fef08a 0%, #d4af37 100%);
+        }
+
+        .btn:active {
+            transform: translateY(1px);
+        }
+
+        .footer-note {
+            margin-top: 30px;
+            font-size: 15px;
+            color: #94a3b8;
+            font-family: 'Cairo', sans-serif;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- موسيقى عيد الميلاد هادئة وجميلة -->
+    <audio id="bgMusic" loop>
+        <source src="https://cdn.pixabay.com/download/audio/2022/03/15/audio_c8c8a2a88a.mp3?filename=happy-birthday-155461.mp3" type="audio/mpeg">
+    </audio>
+
+    <div class="card">
+        <div class="crown">👑</div>
+        <h1>كل عام وأنت أعظم أب ❤️</h1>
+        
+        <div class="audio-control">
+            <button class="audio-btn" id="musicToggle" onclick="toggleMusic()">
+                <span id="musicIcon">🎵</span> <span id="musicText">تشغيل الموسيقى</span>
+            </button>
+        </div>
+
+        <div class="typing-container">
+            <p class="typing-text" id="quoteDisplay"></p>
+        </div>
+
+        <button class="btn" onclick="nextQuote()">اضغط هنا يا بابا ✨</button>
+
+        <p class="footer-note">صُنِع بكل حب واعتزاز لتاج رأسنا 👑</p>
+    </div>
+
+    <script>
+        // الجمل المكتوبة لبابا بأسلوب مهيب ودافئ
+        const quotes = [
+            "إلى السند والأمان.. إلى من علمنا كيف ننظر للحياة بكرامة وعزة.. كل عام وأنت بخير يا بابا ❤️",
+            "وجودك في حياتنا هو النعمة الأكبر التي نُحمد الله عليها كل يوم، دمتاً لنا تاجاً على الرؤوس ✨",
+            "ابتسامتك ورضاك هما السعادة الحقيقية بالنسبة لنا، الله يديم عليك الصحة والعافية والأمان 🌟",
+            "أنت لست فقط أبانا، أنت الفخر والسقف الذي يظلنا بالحب والحنان والهيبة 👑",
+            "كل كلمات الشكر لا توفيك حقك على كل نقطة عرق وكل لحظة تعب من أجل رفعتنا وراحتنا 🤍",
+            "الله يطول في عمرك ويحفظك لنا صحةً وسنداً وأماناً دائماً وأبداً يا أغلى الناس 🤲🎉"
+        ];
+
+        let currentIndex = 0;
+        let charIndex = 0;
+        let isTyping = false;
+        const quoteDisplay = document.getElementById("quoteDisplay");
+        const bgMusic = document.getElementById("bgMusic");
+        const musicText = document.getElementById("musicText");
+        const musicIcon = document.getElementById("musicIcon");
+        let isPlaying = false;
+
+        // تشغيل وإيقاف الموسيقى
+        function toggleMusic() {
+            if (isPlaying) {
+                bgMusic.pause();
+                musicText.innerText = "تشغيل الموسيقى";
+                musicIcon.innerText = "🎵";
+                isPlaying = false;
+            } else {
+                bgMusic.play().then(() => {
+                    musicText.innerText = "إيقاف الموسيقى";
+                    musicIcon.innerText = "🎶";
+                    isPlaying = true;
+                }).catch(e => {
+                    console.log("Audio playback error:", e);
+                });
+            }
+        }
+
+        // دالة تأثير الآلة الكاتبة (Typing Effect)
+        function typeWriter(text) {
+            if (charIndex < text.length) {
+                quoteDisplay.innerHTML += text.charAt(charIndex);
+                charIndex++;
+                setTimeout(() => typeWriter(text), 45);
+            } else {
+                isTyping = false;
+            }
+        }
+
+        // عرض الجملة وتفعيل الألعاب النارية
+        function showQuote(index) {
+            isTyping = true;
+            quoteDisplay.innerHTML = "";
+            charIndex = 0;
+            typeWriter(quotes[index]);
+            triggerConfetti();
+        }
+
+        // عند الضغط على الزر
+        function nextQuote() {
+            // تشغيل الموسيقى تلقائياً عند أول ضغطة زِر إن لم تكن تعمل
+            if (!isPlaying) {
+                toggleMusic();
+            }
+
+            if (isTyping) return; // منع الضغط أثناء الكتابة
+            currentIndex = (currentIndex + 1) % quotes.length;
+            showQuote(currentIndex);
+        }
+
+        // تأثير الألعاب النارية الملونة الفاخرة
+        function triggerConfetti() {
+            confetti({
+                particleCount: 60,
+                spread: 70,
+                origin: { y: 0.7 },
+                colors: ['#d4af37', '#fef08a', '#ffffff', '#38bdf8']
+            });
+        }
+
+        // تشغيل الجملة الأولى تلقائياً عند فتح الصفحة
+        window.onload = () => {
+            showQuote(0);
+        };
+    </script>
+
+</body>
+</html>
